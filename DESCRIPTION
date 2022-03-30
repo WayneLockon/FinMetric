@@ -1,11 +1,10 @@
 Package: FinMetric
 Type: Package
-Title: What the Package Does (Title Case)
+Title: This is a package used to deal with financial time series
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Author: Weiheng Zhang
+Maintainer: Weiheng Zhang <yourself@somewhere.net>
+Description: This is a package applying econometrics
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
