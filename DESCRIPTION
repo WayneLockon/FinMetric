@@ -1,10 +1,12 @@
 Package: FinMetric
 Type: Package
-Title: This is a package used to deal with financial time series
+Title: This is a package to replicate the empirical results in panel data, time series and so on.
 Version: 0.1.0
 Author: Weiheng Zhang
 Maintainer: Weiheng Zhang <yourself@somewhere.net>
-Description: This is a package applying econometrics
+Description: This is a package using R to replicate the empirical results in Bruce Hansen's economtetrics.
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
+Imports: stats,
+    zoo
