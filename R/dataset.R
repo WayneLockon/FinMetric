@@ -15,3 +15,7 @@ fred <- function(Dataset = character(), start.date, end.date){
     dat
 }
 
+read_stata <- function(path){
+    stata(paste("use", path, data.out = TRUE))
+}
+
