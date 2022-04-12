@@ -15,7 +15,15 @@ fred <- function(Dataset = character(), start.date, end.date){
     dat
 }
 
+#' Read Stata dta file from given path
+#'
+#' @param path The path of dta file
+#'
+#' @return Return is a data.frame object
+#' @export
+#'
+#' @examples
 read_stata <- function(path){
-    stata(paste("use", path, data.out = TRUE))
+    stata(paste0('use "', path, '"'), data.out = TRUE)
 }
 
