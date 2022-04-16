@@ -17,16 +17,28 @@ fred <- function(Dataset = character(),
         dplyr::relocate(date) %>%
         dplyr::filter(date >= lubridate::as_date(start.date) & date <= lubridate::as_date(end.date)) %>%
         tibble()
+    # Quandl::Quandl(paste0("FRED/", Dataset)) %>%
+    #     dplyr::mutate(date = as.Date(Date)) %>%
+    #     dplyr::select(-Date) %>%
+    #     dplyr::filter(date >= lubridate::as_date(start.date) & date <= lubridate::as_date(end.date)) %>%
+    #     tibble()
 }
 
-#' Read Stata dta file from given path
+
+
+#' Read Stata dta file from given path or website
 #'
 #' @param path The path of dta file
 #'
 #' @return Return is a data.frame object
 #' @export
 #'
-#' @examples
+#' @examples read_stata("hiway")
+#' Load (Minnesota Highway Data, 1973)
+#'
+#' read_stata("https://www.stata-press.com/data/r17/union")
+#'
+#' read_stata("data.dta")
 read_stata <- function(path){
     stata(paste0('use "', path, '"'), data.out = TRUE)
 }
