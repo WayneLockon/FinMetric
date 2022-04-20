@@ -1,0 +1,36 @@
+---
+title: "Working Paper"
+date: 
+author: 
+output: pdf_document
+bibliography: Refs.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning=FALSE, fig.width=6, fig.height=3.6, fig.align="center")
+```
+
+# Introduction
+
+**Lorem ipsum** dolor *sit amet*. 
+
+- Single asterisks italicize text *like this*. 
+- Double asterisks embolden text **like this**.
+
+# Reference
+
+::: {#refs}
+:::
+
+\newpage
+
+# Appendix A: R Code
+
+```{r get-labels, echo = FALSE}
+labs = knitr::all_labels()
+labs = setdiff(labs, c("setup", "get-labels"))
+```
+
+```{r all-code, ref.label=labs, eval=FALSE, echo=TRUE}
+```
+
