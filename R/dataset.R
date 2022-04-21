@@ -13,7 +13,7 @@ fred <- function(Dataset = character(),
                  start.date,
                  end.date){
     quantmod::getSymbols(Dataset, src = "FRED", auto.assign = F, return.class = "data.frame") %>%
-        dplyr::mutate(date = as.Date(rownames(.))) %>%
+        dplyr::mutate(date = lubridate::as_date(rownames(.))) %>%
         dplyr::relocate(date) %>%
         dplyr::filter(date >= lubridate::as_date(start.date) & date <= lubridate::as_date(end.date)) %>%
         tibble()

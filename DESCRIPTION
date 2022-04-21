@@ -1,7 +1,7 @@
 Package: FinMetric
 Type: Package
 Title: This is a package to replicate the empirical results in panel data, time series and so on.
-Version: 0.1.0
+Version: 0.1.1
 Author: Weiheng Zhang
 Maintainer: Weiheng Zhang <yourself@somewhere.net>
 Description: This is a package using R to replicate the empirical results in Bruce Hansen's economtetrics.
