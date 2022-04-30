@@ -52,7 +52,7 @@ read_stata <- function(path){
 #' @return
 #' @export
 #'
-#' @examples
+#' @examples download_file("https://www.sec.gov/Archives/edgar/full-index/form.idx", "form.txt")
 download_file <- function(link, dfile) {
     UA <- "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:93.0) Gecko/20100101 Firefox/93.0"
     tryCatch({
