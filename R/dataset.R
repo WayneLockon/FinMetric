@@ -43,3 +43,30 @@ read_stata <- function(path){
     invisible(capture.output(stata(paste0('use "', path, '"'), data.out = TRUE)))
 }
 
+
+#' Download file
+#'
+#' @param link the url
+#' @param dfile the destination file
+#'
+#' @return
+#' @export
+#'
+#' @examples
+download_file <- function(link, dfile) {
+    UA <- "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:93.0) Gecko/20100101 Firefox/93.0"
+    tryCatch({
+        r <- httr::GET(link,
+                       httr::add_headers(`Connection` = "keep-alive", `User-Agent` = UA),
+                       httr::write_disk(dfile, overwrite=TRUE)
+        )
+        if(httr::status_code(r)==200){
+            return(TRUE)
+        }else{
+            return(FALSE)
+        }
+        return(TRUE)
+    }, error = function(e) {
+        return(FALSE)
+    })
+}
