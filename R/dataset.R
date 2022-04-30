@@ -40,6 +40,6 @@ fred <- function(Dataset = character(),
 #'
 #' read_stata("data.dta")
 read_stata <- function(path){
-    stata(paste0('use "', path, '"'), data.out = TRUE)
+    invisible(capture.output(stata(paste0('use "', path, '"'), data.out = TRUE)))
 }
 

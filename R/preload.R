@@ -7,7 +7,7 @@
     library(lmtest)
     suppressMessages(library(tidyverse))
     library(sandwich)
-    library(stargazer)
+    suppressPackageStartupMessages(library(stargazer))
     suppressWarnings(suppressPackageStartupMessages(library(plm)))
 }
 
