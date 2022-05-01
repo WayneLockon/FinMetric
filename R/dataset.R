@@ -39,8 +39,13 @@ fred <- function(Dataset = character(),
 #' read_stata("https://www.stata-press.com/data/r17/union")
 #'
 #' read_stata("data.dta")
-read_stata <- function(path){
-    invisible(capture.output(stata(paste0('use "', path, '"'), data.out = TRUE)))
+read_stata <- function(path, webuse = FALSE){
+    if(!webuse){
+        invisible(capture.output(data <- stata(paste0('use "', path, '"'), data.out = TRUE)))
+    }else{
+        invisible(capture.output(data <- stata(paste0('webuse "', path, '"'), data.out = TRUE)))
+    }
+    return(data)
 }
 
 
