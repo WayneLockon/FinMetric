@@ -4,6 +4,9 @@ date:
 author: 
 output: pdf_document
 bibliography: Refs.bib
+header-includes:
+  \usepackage{fvextra}
+  \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
 ---
 
 ```{r setup, include=FALSE}
