@@ -9,8 +9,30 @@ header-includes:
   \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
 ---
 
+\newcommand{\indep}{\perp\!\!\!\perp}
+\newcommand{\covprob}{\overset{p}{\rightarrow}}
+\newcommand{\covdist}{\overset{d}{\rightarrow}}
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning=FALSE, fig.width=6, fig.height=3.6, fig.align="center")
+library(FinMetric)
+# define figure template
+plot_task <- function(...){
+    ggplot(...) +
+        theme_bw() +
+        ggthemes::scale_colour_stata("s2color") +
+        ggthemes::scale_fill_stata("s2color") +
+        theme(legend.position = "bottom") +
+        scale_linetype_manual(values = c("solid", "longdash", "dotted"))
+}
+# define table template
+table_task <- function(...){
+    knitr::kable(..., booktab = T,
+          format = "latex",
+          linesep = "") %>% 
+        kableExtra::kable_styling(position = 'center',
+                  latex_options = "HOLD_position")
+}
 ```
 
 # Introduction
