@@ -1,4 +1,4 @@
-#' Make data balanced
+#' Make panel data balanced
 #'
 #' @param df an object of class `data.frame`, `tibble`
 #' @param type character, one of `"fill_NA"`,
