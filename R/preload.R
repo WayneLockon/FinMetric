@@ -9,5 +9,6 @@
     library(sandwich)
     suppressPackageStartupMessages(library(stargazer))
     suppressWarnings(suppressPackageStartupMessages(library(plm)))
+    library(fixest)
 }
 
