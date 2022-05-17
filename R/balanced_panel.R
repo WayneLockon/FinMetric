@@ -50,7 +50,7 @@ balance_panel <- function(df,
 
     # identify time sequence
     time_seq <- if(!is.null(time_seq)) time_seq else df %>%
-        select(index[2]) %>%
+        dplyr::select(index[2]) %>%
         unique %>%
         pull()
 
@@ -58,30 +58,30 @@ balance_panel <- function(df,
     switch(type,
            "fill_NA" = {
                result <- df %>%
-                   group_by_at(index[1]) %>%
-                   fill_(if(is.null(individual_var)) NULL else individual_var, .direction = "updown") %>%
-                   group_by_at(c(index[1], individual_var)) %>%
-                   expand(time_seq) %>%
-                   rename_with(~index[2], time_seq) %>%
-                   {left_join(., df, by = names(.))} %>%
-                   ungroup()
+                   dplyr::group_by_at(index[1]) %>%
+                   tidyr::fill_(if(is.null(individual_var)) NULL else individual_var, .direction = "updown") %>%
+                   dplyr::group_by_at(c(index[1], individual_var)) %>%
+                   tidyr::expand(time_seq) %>%
+                   dplyr::rename_with(~index[2], time_seq) %>%
+                   {dplyr::left_join(., df, by = names(.))} %>%
+                   dplyr::ungroup()
            },
            "drop_individuals" = {
                result <- df %>%
                    # filter_(paste0(index[2], " %in% time_seq")) %>%
-                   filter(.[[index[2]]] %in% time_seq) %>%
-                   group_by_at(index[1]) %>%
-                   fill_(if(is.null(individual_var)) NULL else individual_var, .direction = "updown") %>%
-                   filter_at(union(index, individual_var),all_vars(!is.na(.))) %>%
-                   ungroup()
+                   dplyr::filter(.[[index[2]]] %in% time_seq) %>%
+                   dplyr::group_by_at(index[1]) %>%
+                   tidyr::fill_(if(is.null(individual_var)) NULL else individual_var, .direction = "updown") %>%
+                   dplyr::filter_at(union(index, individual_var),all_vars(!is.na(.))) %>%
+                   dplyr::ungroup()
            },
            "drop_times" = {
                time_new <- Reduce(intersect,
                                   split(df[, index[2]], df[, index[1]])) %>%
                    intersect(time_seq)
                result <- df %>%
-                   filter(.[[index[2]]] %in% time_new) %>%
-                   tibble()
+                   dplyr::filter(.[[index[2]]] %in% time_new) %>%
+                   tibble::tibble()
            })
     return(result)
 }
