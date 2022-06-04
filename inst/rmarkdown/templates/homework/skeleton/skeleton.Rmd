@@ -17,6 +17,8 @@ Setting problem as a section
 \secprob{1}
 This is a problem
 
+\subprob{(a)} This is a subsection of this problem
+
 \sol
 
 We can also make problem as a theorem
