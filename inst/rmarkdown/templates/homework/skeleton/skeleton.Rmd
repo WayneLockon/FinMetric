@@ -2,7 +2,7 @@
 title: "Template Title"
 subtitle: "Homework "
 author: "Your Name"
-date: "The Date"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
   pdf_document:
     template: template.tex
