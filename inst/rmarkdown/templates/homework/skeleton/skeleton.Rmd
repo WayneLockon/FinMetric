@@ -4,7 +4,7 @@ subtitle: "Homework "
 author: "Your Name"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
-  pdf_document:
+  pdf_document: 
     template: template.tex
 ---
 
@@ -60,6 +60,12 @@ master template.  Therefore $T(n) = \Theta(g(n)) = \Theta(n^{1.585})$.
 \begin{verbatim}
 http://www.tug.org/begin.html
 \end{verbatim}
+
+```{r cars, echo=T}
+summary(cars)
+# command
+plot(pressure)
+```
 
 \newpage
 NEW PAGE!!!
