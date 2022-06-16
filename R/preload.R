@@ -8,7 +8,6 @@
     suppressMessages(library(tidyverse))
     library(sandwich)
     suppressPackageStartupMessages(library(stargazer))
-    suppressWarnings(suppressPackageStartupMessages(library(plm)))
     library(fixest)
     library(kableExtra)
     library(modelsummary)
