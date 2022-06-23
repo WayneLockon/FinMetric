@@ -1,0 +1,34 @@
+---
+title: "Lecture: "
+subtitle: "Econ 700"
+author: "Your Name"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  pdf_document: 
+    template: template.tex
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This is some warmup discussion before the first section.
+
+\section{Here's a section header}
+
+\subsection{Here's a subsection}
+
+You might like to put use subsectioning these too.  An alternate way to put in a small subheading for a paragraph is to use the \begin{verbatim} \paragraph \end{verbatim} command.  For example:
+
+\paragraph{A remembrance by Dantzig.}  The early days were full of intense excitement. Scientists, free at last from war-time pressures, entered the post-war period hungry for new areas of research. The computer came on the scene at just the right time. Economists and mathematicians were intrigued with the possibility that the fundamental problem of optimal allocation of scarce resources could be numerically solved. Not too long after my first meeting with Tucker there was a meeting of the Econometric Society in Wisconsin attended by well-known statisticians and mathematicians like Hotelling and von Neumann, and economists like Koopmans. I was a young unknown and I remember how frightened I was at the idea of presenting for the first time to such a distinguished audience, the concept of linear programming.
+
+
+
+
+More equations:
+
+$\max \Big\{ \sum_{i \in Observations} \Big( y_i - \sum_{j \in Candidates} \beta_j x_{i,j} \Big) ^2 \Big\}$
+
+$\max\Bigg\{ \sum_{i \in Observations} \Big| y_i - \sum_{j \in Candidates} \beta_j x_{i,j} \Big| \Bigg\}$
+
+
