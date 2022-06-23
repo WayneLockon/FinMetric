@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[11pt]{article}
 
 \oddsidemargin 0in \evensidemargin 0in \marginparwidth 40pt
 \marginparsep 10pt \topmargin 0pt \headsep 0in \headheight 0in
@@ -174,7 +174,7 @@ $endif$
       \advance\headerwidth by -0.22in
       \hbox to \headerwidth {\bf $if(subtitle)$ $subtitle$ $endif$ \hfill $date$ }
       \vspace{4mm}
-      \hbox to \headerwidth {{\Large \hfill  {$if(title)$ $title$$if(thanks)$\thanks{$thanks$}$endif$ $endif$} \hfill}}
+      \hbox to \headerwidth {{\large \hfill  {$if(title)$ $title$$if(thanks)$\thanks{$thanks$}$endif$ $endif$} \hfill}}
       \vspace{2mm}
       \hbox to \headerwidth {{ \hfill \it $for(author)$$author$$sep$ \and $endfor$}}
       }
