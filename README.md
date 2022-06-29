@@ -1,3 +1,3 @@
 # FinMetric
 
-This is a package for replicating empirical results of economics. So it support to use STATA directly in R and import data from data resourse.
+This is an R package to do estimation. It supports to run STATA command in R, similar to RStata package. It also provides Rmarkdown templates for lecture notes, problem sets, and working paper.
