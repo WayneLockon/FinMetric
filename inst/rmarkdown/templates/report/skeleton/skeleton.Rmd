@@ -7,6 +7,8 @@ bibliography: Refs.bib
 header-includes:
   \usepackage{fvextra}
   \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+  \usepackage{algorithm}
+  \usepackage{algpseudocode}
 ---
 
 \newcommand{\indep}{\perp\!\!\!\perp}
@@ -14,8 +16,17 @@ header-includes:
 \newcommand{\covdist}{\overset{d}{\rightarrow}}
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning=FALSE, fig.width=6, fig.height=3.6, fig.align="center")
+knitr::opts_chunk$set(message=FALSE, warning=FALSE, fig.width=6, fig.height=3, fig.align="center", size = "footnotesize")
 library(FinMetric)
+gof <- tibble::tribble(
+  ~raw,        ~clean,          ~fmt,
+  "nobs",      "N",             0,
+  "r.squared", "$R^2$", 2)
+def.chunk.hook  <- knitr::knit_hooks$get("chunk")
+knitr::knit_hooks$set(chunk = function(x, options) {
+  x <- def.chunk.hook(x, options)
+  ifelse(options$size != "normalsize", paste0("\n \\", options$size,"\n\n", x, "\n\n \\normalsize"), x)
+})
 # define figure template
 plot_task <- function(...){
     ggplot(...) +
@@ -41,6 +52,30 @@ table_task <- function(...){
 
 - Single asterisks italicize text *like this*. 
 - Double asterisks embolden text **like this**.
+
+
+## Algorithm
+
+\begin{algorithm}
+\caption{An algorithm with caption}\label{alg:cap}
+\begin{algorithmic}
+\Require $n \geq 0$
+\Ensure $y = x^n$
+\State $y \gets 1$
+\State $X \gets x$
+\State $N \gets n$
+\While{$N \neq 0$}
+\If{$N$ is even}
+    \State $X \gets X \times X$
+    \State $N \gets \frac{N}{2}$  \Comment{This is a comment}
+\ElsIf{$N$ is odd}
+    \State $y \gets y \times X$
+    \State $N \gets N - 1$
+\EndIf
+\EndWhile
+\end{algorithmic}
+\end{algorithm}
+
 
 # Reference
 
