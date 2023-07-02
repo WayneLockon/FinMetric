@@ -1,0 +1,158 @@
+\documentclass[12pt]{article}
+\usepackage{amssymb,amsfonts,amsmath,amsthm,mathrsfs}
+\usepackage{sgame}
+%\usepackage[usenames]{color}
+\usepackage[svgnames]{xcolor}
+\usepackage{textcomp,fontenc,url}
+\usepackage{menukeys}
+\usepackage{pstricks,pst-node,pst-text,pst-3d,psfrag}
+\usepackage{afterpage,geometry}
+\usepackage{setspace}
+\usepackage[bottom,multiple,splitrule]{footmisc}
+\usepackage{graphicx}
+\usepackage[authoryear,round,longnamesfirst]{natbib}
+\usepackage{enumitem}
+\usepackage{subfiles}
+\usepackage[colorlinks = true,
+            linkcolor = blue,
+            urlcolor  = blue,
+            citecolor = blue,
+            anchorcolor = blue]{hyperref}
+\usepackage{epsf}
+\usepackage[normalem]{ulem}
+\usepackage{bbm}
+
+\usepackage{xr} %reference another document
+\usepackage{fixmath}
+\usepackage{thmtools}
+\usepackage{dsfont}
+\usepackage{xargs}
+\usepackage[capitalize,nameinlink]{cleveref} %clever references
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\setlist{nolistsep,leftmargin=*}%removes space in lists
+%%% PACKAGES FROM PREVIOUS VERSION
+\usepackage{fullpage}
+\usepackage[section]{placeins}
+\usepackage{chngcntr}
+\usepackage{booktabs,caption} %,fixltx2e
+\usepackage[flushleft]{threeparttable}
+\usepackage{bm,array}
+\usepackage{multirow}
+\usepackage{titling}
+\usepackage{adjustbox}
+\usepackage{lscape}
+\usepackage{epsfig,latexsym,amsmath}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{authblk}
+\usepackage{float}
+\usepackage{pdfpages}
+
+\usepackage[labelfont=bf]{caption}
+\usepackage[labelsep=period]{caption}
+\usepackage{subcaption}
+
+\usepackage[round]{natbib}
+\usepackage[english]{babel}
+\usepackage[fixlanguage]{babelbib}
+\usepackage[bottom]{footmisc}
+\usepackage{multibib}
+
+\newcites{survey}{ }
+\frenchspacing
+\usepackage{color,hyperref}
+\definecolor{maroon}{RGB}{100,0,0}
+\hypersetup{colorlinks,breaklinks,
+            linkcolor=blue,urlcolor=blue,
+            anchorcolor=blue,citecolor=blue}
+
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{makecell}
+%%%% END HERE          
+
+
+
+\usepackage{sectsty}
+\usepackage{titlesec}
+\usepackage{lipsum} %spacing
+\usepackage[title]{appendix}
+
+\renewcommand{\appendixname}{Appendix}
+
+%\floatsetup[table]{capposition=top}
+%\floatsetup[figure]{capposition=bottom}
+
+\setcounter{MaxMatrixCols}{10}
+\hypersetup{
+    pdftitle=The Impact of Joint versus Separate Prediction Mode on Forecasting Accuracy,
+    pdfauthor={Alex Imas, Minah H. Jung, Silvia Saccardo, and Joachim Vosgerau},
+    pdfkeywords={Forecasting, prediction},
+    citecolor=blue,
+    bookmarksnumbered=true,
+    linkcolor=blue,
+} \theoremstyle{remark}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{assumption}{Assumption}
+\newtheorem{acknowledgement}{Acknowledgement}
+\newtheorem{algorithm}{Algorithm}
+\newtheorem{axiom}{Axiom}
+\newtheorem{case}{Case}
+\newtheorem{claim}{Claim}
+\newtheorem{conclusion}{Conclusion}
+\newtheorem{condition}{Condition}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{corollary}{Corollary}
+\newtheorem{criterion}{Criterion}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newtheorem{exercise}{Exercise}
+\newtheorem{fact}{Fact}
+\newtheorem{lemma}{Lemma}
+\newtheorem{notation}{Notation}
+\newtheorem{problem}{Assumption}
+\newtheorem{observation}{Observation}
+\newtheorem{proposition}{Proposition}
+\newtheorem{property}{Property}
+\newtheorem{remark}{Remark}
+\newtheorem{result}{Result}
+\newtheorem{solution}{Solution}
+\newtheorem{summary}{Summary}
+
+\crefname{observation}{Observation}{Observations}
+\crefname{eqnarray}{Eq.}{Eqs.}
+
+\usepackage{abstract}
+\renewcommand{\abstractname}{}
+\titlespacing*{\section}{0in}{.2in}{.03in}
+\titlespacing*{\subsection}{0in}{.1in}{0.03in}
+\titlespacing*{\paragraph}{0in}{.08in}{0.15in}
+
+\titleformat{\section}{\normalsize\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+\geometry{left=1.15in,right=1.15in,top=1.25in,bottom=1.2in}
+\onehalfspacing
+\let\clipbox\relax
+
+\begin{document}
+
+$if(title)$
+\title{$title$$if(thankstitle)$\thanks{$thankstitle$}$endif$}
+$endif$
+\author{$for(author)$$author$$sep$ \and $endfor$ $if(thanks)$\thanks{$thanks$}$endif$}
+\author{Your Name\thanks{Last Name: University of Wisconsin Madison}}
+
+\maketitle
+
+\vspace{-.3in}
+
+$body$
+
+
+
+\end{document}
