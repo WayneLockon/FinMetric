@@ -53,3 +53,21 @@ For instance, in the case of the chat service example:
 \item Carry out a benchmark of attacks on the implementation to assess the security of the service.
 \item Use the same benchmark on another service for comparison.
 \end{enumerate}
+
+## Table
+
+\begin{table}[H]
+\centering
+\caption{"Caption"}
+\resizebox{0.8\textwidth}{0.4\textheight}{\input{"table.tex"}}
+\end{table}
+
+## Figure
+
+\begin{figure}
+\caption{"Caption"}
+\begin{center}\includegraphics[width=0.8\textwidth]{Figure1.pdf} \end{center}
+
+{\footnotesize  \textit{Notes}: Figure notes ........................}
+\end{figure}
+

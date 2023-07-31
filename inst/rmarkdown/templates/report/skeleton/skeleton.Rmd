@@ -76,6 +76,24 @@ table_task <- function(...){
 \end{algorithmic}
 \end{algorithm}
 
+## Table
+
+\begin{table}[H]
+\centering
+\caption{"Caption"}
+\resizebox{0.8\textwidth}{0.4\textheight}{\input{"table.tex"}}
+\end{table}
+
+## Figure
+
+\begin{figure}
+\caption{"Caption"}
+\begin{center}\includegraphics[width=0.8\textwidth]{Figure1.pdf} \end{center}
+
+{\footnotesize  \textit{Notes}: Figure notes ........................}
+\end{figure}
+
+
 
 # Reference
 
