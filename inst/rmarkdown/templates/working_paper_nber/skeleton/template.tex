@@ -145,7 +145,7 @@ $if(title)$
 \title{$title$$if(thankstitle)$\thanks{$thankstitle$}$endif$}
 $endif$
 \author{$for(author)$$author$$sep$ \and $endfor$ $if(thanks)$\thanks{$thanks$}$endif$}
-
+$if(date)$\date{$date$}$endif$
 \maketitle
 
 \vspace{-.3in}
