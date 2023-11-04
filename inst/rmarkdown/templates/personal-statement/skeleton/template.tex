@@ -1,0 +1,80 @@
+\documentclass[11pt, a4paper, english]{article}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+	$if(title-meta)$
+	pdftitle={$title-meta$},
+	$endif$
+	$if(author-meta)$
+	pdfauthor={$author-meta$},
+	$endif$
+	$if(lang)$
+	pdflang={$lang$},
+	$endif$
+	$if(subject)$
+	pdfsubject={$subject$},
+	$endif$
+	$if(keywords)$
+	pdfkeywords={$for(keywords)$$keywords$$sep$, $endfor$},
+	$endif$
+	$if(colorlinks)$
+	colorlinks=true,
+	linkcolor={$if(linkcolor)$$linkcolor$$else$Maroon$endif$},
+	filecolor={$if(filecolor)$$filecolor$$else$Maroon$endif$},
+	citecolor={$if(citecolor)$$citecolor$$else$Blue$endif$},
+	urlcolor={$if(urlcolor)$$urlcolor$$else$Blue$endif$},
+	$else$
+	hidelinks,
+	$endif$
+	pdfcreator={LaTeX via pandoc}}
+
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{lastpage}
+\usepackage[english]{babel}
+\usepackage{fancyhdr, lipsum}
+\usepackage[demo]{graphicx}% remove the demo option
+
+
+$if(numbersections)$
+\setcounter{secnumdepth}{$if(secnumdepth)$$secnumdepth$$else$5$endif$}
+$else$
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+$endif$
+
+\fancyhf{}
+% \fancyhead[C]{\includegraphics[height=40mm,width= \textwidth]{AbstractHeader.jpg}}
+\fancyfoot[R]{Page \thepage \hspace{1pt} of \pageref{LastPage}}
+$if(shorttitle)$ \fancyfoot[L]{$shorttitle$}$endif$
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\pagestyle{fancy}
+
+\makeatletter
+\let\ps@plain\ps@fancy 
+\makeatother
+
+\makeatletter         
+\def\@maketitle{
+\begin{center}
+    \parskip
+    \baselineskip
+    \parindent=0pt
+    \textbf{\@title}\par   
+    { \@author \par \vspace{-4mm}
+    $program$}
+\end{center}}
+\makeatother
+
+\usepackage[skip=10pt plus1pt, indent=40pt]{parskip}
+
+\begin{document}
+\setlength{\parindent}{0cm}
+\title{$if(title)$ $title$$endif$}
+\author{$for(author)$$author$$sep$ \and $endfor$}
+\date{$date$}
+\maketitle 
+$body$
+\end{document}
