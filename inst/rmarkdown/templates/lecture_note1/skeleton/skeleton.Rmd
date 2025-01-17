@@ -17,6 +17,14 @@ knitr::knit_hooks$set(chunk = function(x, options) {
 })
 ```
 
+\begin{enumerate}
+\item \textcolor{Lblue}{Lecture Blue, Lblue}
+\item \textcolor{Lred}{Lecture Red, Lred}
+\item \textcolor{Lbg}{Lecture Blue Green, Lbg}
+\item \textcolor{Llg}{Lecture lightgreen, Llg}
+\item \textcolor{Ldg}{Lecture darkgreen, Ldg}
+\end{enumerate}
+
 This is some warmup discussion before the first section.
 
 \section{Here's a section header}

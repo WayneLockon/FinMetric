@@ -1,0 +1,179 @@
+\documentclass{article}
+\usepackage{xcolor}
+\usepackage{titleps}
+\usepackage[letterpaper, margin=0.95in]{geometry}
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage{enumitem}
+\usepackage{tabu}
+\usepackage{parskip}
+\usepackage{natbib}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{quiver}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{hyperref}
+\hypersetup{
+	$if(title-meta)$
+	pdftitle={$title-meta$},
+	$endif$
+	$if(author-meta)$
+	pdfauthor={$author-meta$},
+	$endif$
+	$if(lang)$
+	pdflang={$lang$},
+	$endif$
+	$if(subject)$
+	pdfsubject={$subject$},
+	$endif$
+	$if(keywords)$
+	pdfkeywords={$for(keywords)$$keywords$$sep$, $endfor$},
+	$endif$
+	$if(colorlinks)$
+	colorlinks=true,
+	linkcolor={$if(linkcolor)$$linkcolor$$else$Maroon$endif$},
+	filecolor={$if(filecolor)$$filecolor$$else$Maroon$endif$},
+	citecolor={$if(citecolor)$$citecolor$$else$Blue$endif$},
+	urlcolor={$if(urlcolor)$$urlcolor$$else$Blue$endif$},
+	$else$
+	hidelinks,
+	$endif$
+	pdfcreator={LaTeX via pandoc}}
+    
+\definecolor{Lblue}{rgb}{0, 33, 71}
+\definecolor{Lred}{rgb}{119, 59, 69}
+\definecolor{Lbg}{rgb}{25, 133, 128}
+\definecolor{Llg}{rgb}{0, 198, 190}
+\definecolor{Ldg}{rgb}{0, 79, 46}
+
+
+
+\providecommand{\tightlist}{%
+	\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+$if(numbersections)$
+\setcounter{secnumdepth}{$if(secnumdepth)$$secnumdepth$$else$5$endif$}
+$else$
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+$endif$
+\ifPDFTeX
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+\usepackage{unicode-math}
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+	\usepackage[]{microtype}
+	\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+	\IfFileExists{parskip.sty}{%
+		\usepackage{parskip}
+	}{% else
+		\setlength{\parindent}{0pt}
+		\setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+	\KOMAoptions{parskip=half}}
+\makeatother
+
+\newcommand{\xb}{\mathbf{x}}
+\newcommand{\yb}{\mathbf{y}}
+\newcommand{\wb}{\mathbf{w}}
+\newcommand{\Xb}{\mathbf{X}}
+\newcommand{\Yb}{\mathbf{Y}}
+\newcommand{\tr}{^T}
+\newcommand{\hb}{\mathbf{h}}
+\newcommand{\Hb}{\mathbf{H}}
+
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+\DeclareFontShape{OT1}{cmtt}{bx}{n}{<5><6><7><8><9><10><10.95><12><14.4><17.28><20.74><24.88>cmttb10}{}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{observation}[theorem]{Observation}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% causal inference mark
+\newcommand{\indep}{\perp\!\!\!\perp}
+\newcommand{\covprob}{\overset{p}{\rightarrow}}
+\newcommand{\covdist}{\overset{d}{\rightarrow}}
+\usepackage{dsfont}
+\newcommand{\1}[1]{\mathds{1}\{#1\}}
+
+\usepackage{forest}
+
+\usepackage[color=red]{todonotes}
+\usepackage{forest}
+\definecolor{light-yellow}{HTML}{FFE5CC}
+
+\usepackage{cleveref}
+
+\newpagestyle{ruled}
+{\sethead{$if(course_number)$ $course_number$ $endif$}{$if(course_title)$ $course_title$ $endif$}{$date$}\headrule
+  \setfoot{}{}{}}
+\pagestyle{ruled}
+
+\renewcommand\makeheadrule{\color{black}\rule[-.75\baselineskip]{\linewidth}{0.4pt}}
+\renewcommand*\footnoterule{}
+
+\begin{document}
+\lstset{basicstyle = \ttfamily,columns=fullflexible,
+backgroundcolor = \color{light-yellow}
+}
+
+\begin{centering}
+    {\Large $if(title)$ $title$$if(thanks)$\thanks{$thanks$}$endif$ $endif$} \\
+    \vspace{.25cm}
+    \textbf{$for(author)$$author$$sep$ \and $endfor$} \\
+\end{centering}
+
+
+
+		$if(toc)$
+	$if(toc-title)$
+	\renewcommand*\contentsname{$toc-title$}
+	$endif$
+	$if(beamer)$
+	\begin{frame}[allowframebreaks]
+		$if(toc-title)$
+		\frametitle{$toc-title$}
+		$endif$
+		\tableofcontents[hideallsubsections]
+	\end{frame}
+	$else$
+	{
+		$if(colorlinks)$
+		\hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$$endif$}
+		$endif$
+		\setcounter{tocdepth}{$toc-depth$}
+		\tableofcontents
+	}
+	$endif$
+	$endif$
+
+
+
+$body$
+
+\end{document}
