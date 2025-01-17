@@ -40,6 +40,14 @@ table_task <- function(...){
 }
 ```
 
+\begin{enumerate}
+\item \textcolor{Lblue}{Lecture Blue, Lblue}
+\item \textcolor{Lred}{Lecture Red, Lred}
+\item \textcolor{Lbg}{Lecture Blue Green, Lbg}
+\item \textcolor{Llg}{Lecture lightgreen, Llg}
+\item \textcolor{Ldg}{Lecture darkgreen, Ldg}
+\end{enumerate}
+
 ## Algorithm
 
 \begin{algorithm}
