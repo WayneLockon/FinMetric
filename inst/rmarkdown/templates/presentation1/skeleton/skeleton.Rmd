@@ -69,7 +69,7 @@ output:
 \begin{frame}{Figure Frame}
     \begin{figure}
         \centering
-        \includegraphics[width = 0.6\linewidth]{fig1.jpg}
+        \includegraphics[width = 0.6\linewidth]{img/fig1.jpg}
         \caption{Your figure name}
         \label{fig:my_label}
     \end{figure}
