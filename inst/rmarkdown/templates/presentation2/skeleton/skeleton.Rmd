@@ -8,6 +8,7 @@ output:
       keep_tex: yes
 header-includes:
   \usepackage{fvextra}
+  \usepackage{natbib, setspace}
   \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
   \usepackage{algorithm}
   \usepackage{algpseudocode}
@@ -132,3 +133,6 @@ msummary(models, output = 'kableExtra', stars = T) %>%
     kable_styling(latex_options = 'scale_down', font_size = 8)
 ```
 
+\singlespacing
+\bibliographystyle{ecta}
+\bibliography{}
